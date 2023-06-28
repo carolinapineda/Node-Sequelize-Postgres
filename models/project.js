@@ -16,32 +16,23 @@ export const Proyect = sequelize.define('projects', {
     },
     descripcion: {
         type: DataTypes.STRING
-    },
-    projects: {
-        type: DataTypes.STRING,
-        references: {
-            model: 'projects',
-            key: 'id'
-        }
     }
-
-   
+}, {
+    timestamps: false
 });
-Proyect.hasMany(Tasks);
-
 
 // El hasmany es para poder relacionar esta tabla con otras tablas.
 // en este caso seria el proyecto tiene muchas tareas
-// Proyect.hasMany(Tasks, {
-//     foreignKey: 'proyectoId',
-//     // El sourceKey siginifica que de dnde va a estar enlazado 
-//     sourceKey: 'id'
-// });
+Proyect.hasMany(Tasks, {
+    foreignKey: 'proyectoid',
+    // El sourceKey siginifica que de dnde va a estar enlazado 
+    sourceKey: 'id'
+})
 
-// uchas tareas pueden pertenecer a un proyecto
-// Tasks.belongsTo(Proyect, {
-//     foreignKey: 'proyectoId',
-//     targetId: 'id'
-// })
-// Proyect.hasMany(Tasks, {foreignKey: 'proyectoId'})
-// Tasks.belongsTo(Proyect, {foreignKey: 'proyectoId'})
+Tasks.belongsTo(Proyect, {
+    foreignKey: 'proyectoid',
+    targetId: 'id'
+})
+   
+
+
