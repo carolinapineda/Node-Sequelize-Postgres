@@ -1,7 +1,10 @@
 // Express 
 import express from 'express';
 import {sequelize} from './database/database.js';
+
+// Importamos las rutas a utilizar 
 import projectRoutes from './routes/projects.routes.js'
+import taskRoutes from './routes/tasks.routes.js';
 
 // import './models/project.js'
 // import './models/task.js'
@@ -16,7 +19,9 @@ app.use(express.json())
 // Definir un puerto y arrancarlo
 const port = 3000;
 
+// Las utilizamos
 app.use(projectRoutes);
+app.use(taskRoutes);
 
 
 
