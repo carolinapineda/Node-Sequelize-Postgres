@@ -28,7 +28,7 @@ app.use(taskRoutes);
 async function main() {
     try {
     // sync() hace una sincronizacion con la base de datos, trtat de crear tablas o eliminarlas
-        await sequelize.sync({force:false})
+        await sequelize.sync({force: true})
     // authenticate nos sirve para comprobar la conexion a la base de datos
         await sequelize.authenticate();
         console.log('La conexión a la base de datos se ha establecido con éxito');
