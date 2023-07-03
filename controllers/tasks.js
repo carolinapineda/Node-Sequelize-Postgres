@@ -41,7 +41,7 @@ export const putTask = async(req, res) => {
         const {nombre, done, proyectoid} = req.body;*/
 
         /*Set lo que hace es si nada mas se le pasa un atributo a actualizar(Solamente se actualiza el atributo que se le paso al postman en el body) 
-        o el nombre del atrubuto se pasa mal(No se actualiza ese atributo por que no lo encontro dentro del modelo) este no dara un error.
+        o el nombre del atributo se pasa mal(No se actualiza ese atributo por que no lo encontro dentro del modelo) este no dara un error.
         No es necesario ponerle todos los atributos para actualizar la tarea*/
         task.set(req.body);
         // Guardamos la tarea 
