@@ -35,7 +35,7 @@ export const putTask = async(req, res) => {
     try {
         const {id} = req.params;
         const task = await Tasks.findOne({
-            where: {id}
+            where: {id}  
         });
         /* El task.set significa que de la tarea voy a establecer algo nuevo, esto se puede ocupar en vez de esto:
         const {nombre, done, proyectoid} = req.body;*/
